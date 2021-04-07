@@ -1,0 +1,28 @@
+{
+  "name": "amazonian-async",
+  "version": "1.0.0",
+  "main": "ReviewBuilder.js",
+  "description": "Async with Callbacks, Promises, and Async/Await",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "test": "mocha --reporter nyan",
+    "lint": "eslint --fix --ext .js ."
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-problems": "^5.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "mocha": "^8.2.1",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
