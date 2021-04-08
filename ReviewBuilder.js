@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { resolve } = require("path");
 const { readFile, produceResult } = require("./helpers");
 
 class ReviewBuilder {
@@ -29,9 +28,9 @@ class ReviewBuilder {
   }
 
   buildReviewsPromises() {
-    return new Promise((resolve, err) => {
+    return new Promise((resolve) => {
       this.buildReviewsCallbacks(resolve);
-    });
+    }).catch("error");
   }
 
   async buildReviewsAsyncAwait() {
