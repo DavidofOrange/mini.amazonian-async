@@ -27,15 +27,46 @@ class ReviewBuilder {
     });
   }
 
+  /// THE easy way out...
+
+  // buildReviewsPromises() {
+  //   return new Promise((resolve) => {
+  //     this.buildReviewsCallbacks(resolve);
+  //   }).catch("error");
+  // }
+
+  // async buildReviewsAsyncAwait() {
+  //   let result = await this.buildReviewsSync();
+  //   return result;
+  // }
+
+  /// To be Extra...
   buildReviewsPromises() {
     return new Promise((resolve) => {
-      this.buildReviewsCallbacks(resolve);
-    }).catch("error");
+      const products = JSON.parse(
+        fs.readFileSync("./data/products.json", "utf-8")
+      );
+      const reviews = JSON.parse(
+        fs.readFileSync("./data/reviews.json", "utf-8")
+      );
+      const users = JSON.parse(fs.readFileSync("./data/users.json", "utf-8"));
+
+      resolve(produceResult({ products, reviews, users }));
+    });
   }
 
   async buildReviewsAsyncAwait() {
-    let result = await this.buildReviewsSync();
-    return result;
+    const products = await JSON.parse(
+      fs.readFileSync("./data/products.json", "utf-8")
+    );
+    const reviews = await JSON.parse(
+      fs.readFileSync("./data/reviews.json", "utf-8")
+    );
+    const users = await JSON.parse(
+      fs.readFileSync("./data/users.json", "utf-8")
+    );
+
+    return produceResult({ products, reviews, users });
   }
 }
 
