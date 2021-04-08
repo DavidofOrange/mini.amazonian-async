@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { readFile, produceResult } = require("./helpers");
+const { produceResult } = require("./helpers");
 
 class ReviewBuilder {
   buildReviewsSync() {
