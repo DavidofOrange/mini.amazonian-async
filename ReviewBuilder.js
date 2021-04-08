@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { resolve } = require("path");
 const { readFile, produceResult } = require("./helpers");
 
 class ReviewBuilder {
@@ -28,11 +29,14 @@ class ReviewBuilder {
   }
 
   buildReviewsPromises() {
-    // FIXME
+    return new Promise((resolve, err) => {
+      this.buildReviewsCallbacks(resolve);
+    });
   }
 
   async buildReviewsAsyncAwait() {
-    // FIXME
+    let result = await this.buildReviewsSync();
+    return result;
   }
 }
 
