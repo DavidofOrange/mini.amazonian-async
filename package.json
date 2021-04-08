@@ -6,17 +6,18 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "test": "mocha --reporter nyan",
-    "lint": "eslint --fix --ext .js ."
+    "test": "npm run && mocha",
+    "lint": "eslint --fix --ext .js .",
+    "start": "node server.js"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
+    "chai": "^4.3.4",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-problems": "^5.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.0",
-    "mocha": "^8.2.1",
+    "mocha": "^8.3.2",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0"
   },
