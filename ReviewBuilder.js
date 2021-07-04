@@ -27,21 +27,6 @@ class ReviewBuilder {
     });
   }
 
-  /// THE easy way out...
-
-  /*
-   buildReviewsPromises() {
-     return new Promise((resolve) => {
-       this.buildReviewsCallbacks(resolve);
-     }).catch("error");
-   }
-
-   async buildReviewsAsyncAwait() {
-     let result = await this.buildReviewsSync();
-    return result;
-  } 
-*/
-  /// To be Extra...
   buildReviewsPromises() {
     return new Promise((resolve) => {
       const products = JSON.parse(
@@ -70,6 +55,5 @@ class ReviewBuilder {
     return produceResult({ products, reviews, users });
   }
 }
-///git
 
 module.exports = ReviewBuilder;
